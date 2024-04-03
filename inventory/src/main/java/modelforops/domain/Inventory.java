@@ -85,6 +85,8 @@ public class Inventory {
 
         StockIncreased stockIncreased = new StockIncreased(inventory);
         stockIncreased.publishAfterCommit();
+        OutOfStock outOfStock = new OutOfStock(inventory);
+        outOfStock.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -96,6 +98,8 @@ public class Inventory {
 
             StockIncreased stockIncreased = new StockIncreased(inventory);
             stockIncreased.publishAfterCommit();
+            OutOfStock outOfStock = new OutOfStock(inventory);
+            outOfStock.publishAfterCommit();
 
          });
         */
