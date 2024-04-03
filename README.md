@@ -20,7 +20,7 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
-- oder
+- order
 - delivery
 - inventory
 - notification
@@ -34,7 +34,7 @@ mvn spring-boot:run
 ```
 
 ## Test by API
-- oder
+- order
 ```
  http :8088/orders id="id" userId="userId" productId="productId" productName="productName" qty="qty" orderDt="orderDt" address="address" status="status" 
 ```

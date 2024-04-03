@@ -57,20 +57,24 @@ public class Inventory {
         stockDecreased.publishAfterCommit();
         */
 
-        /** Example 2:  finding and process
+        // Example 2:  finding and process
         
-        repository().findById(deliveryStarted.get???()).ifPresent(inventory->{
+        repository().findById(Long.valueOf(deliveryStarted.getProductId())).ifPresent(inventory->{
             
-            inventory // do something
-            repository().save(inventory);
+            if(inventory.getStock() >= orderPlaced.getQty()){
+                inventory.setStock(inventory.getStock() - deliveryStarted.getQty()); 
+                repository().save(inventory);
 
-            StockDecreased stockDecreased = new StockDecreased(inventory);
-            stockDecreased.publishAfterCommit();
-            StockDecreased stockDecreased = new StockDecreased(inventory);
-            stockDecreased.publishAfterCommit();
+                StockDecreased stockDecreased = new StockDecreased(inventory);
+                stockDecreased.publishAfterCommit();
+
+            }else{
+                OutOfStock outOfStock = new OutOfStock(inventory);
+                outOfStock.setOrderId(deliveryStarted.getId()); 
+                outOfStock.publishAfterCommit();
 
          });
-        */
+        
 
     }
 

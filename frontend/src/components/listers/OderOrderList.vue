@@ -78,7 +78,7 @@
                         transition="dialog-bottom-transition"
                 >
 
-                    <OderOrder :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <OrderOrder :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -97,12 +97,12 @@
 
 <script>
     const axios = require('axios').default;
-    import OderOrder from './../OderOrder.vue';
+    import OrderOrder from './../OrderOrder.vue';
 
     export default {
-        name: 'OderOrderManager',
+        name: 'OrderOrderManager',
         components: {
-            OderOrder,
+            OrderOrder,
         },
         props: {
             offline: Boolean,

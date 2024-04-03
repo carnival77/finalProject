@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
-import modelforops.OderApplication;
+import modelforops.OrderApplication;
 import modelforops.domain.OrderCancelled;
 import modelforops.domain.OrderPlaced;
 
@@ -46,7 +46,7 @@ public class Order {
     }
 
     public static OrderRepository repository() {
-        OrderRepository orderRepository = OderApplication.applicationContext.getBean(
+        OrderRepository orderRepository = OrderApplication.applicationContext.getBean(
             OrderRepository.class
         );
         return orderRepository;

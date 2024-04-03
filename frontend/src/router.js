@@ -5,8 +5,8 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import OderOrderManager from "./components/listers/OderOrderCards"
-import OderOrderDetail from "./components/listers/OderOrderDetail"
+import OrderOrderManager from "./components/listers/OrderOrderCards"
+import OrderOrderDetail from "./components/listers/OrderOrderDetail"
 
 import DeliveryDeliveryManager from "./components/listers/DeliveryDeliveryCards"
 import DeliveryDeliveryDetail from "./components/listers/DeliveryDeliveryDetail"
@@ -24,14 +24,14 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/oders/orders',
-                name: 'OderOrderManager',
-                component: OderOrderManager
+                path: '/orders/orders',
+                name: 'OrderOrderManager',
+                component: OrderOrderManager
             },
             {
-                path: '/oders/orders/:id',
-                name: 'OderOrderDetail',
-                component: OderOrderDetail
+                path: '/orders/orders/:id',
+                name: 'OrderOrderDetail',
+                component: OrderOrderDetail
             },
 
             {

@@ -10,11 +10,11 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 @EnableBinding(KafkaProcessor.class)
 @EnableFeignClients
-public class OderApplication {
+public class OrderApplication {
 
     public static ApplicationContext applicationContext;
 
     public static void main(String[] args) {
-        applicationContext = SpringApplication.run(OderApplication.class, args);
+        applicationContext = SpringApplication.run(OrderApplication.class, args);
     }
 }
