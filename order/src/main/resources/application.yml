@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: customer
+    name: order
 ---
 
 spring:
@@ -29,7 +29,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: customer
+          group: order
 #<<< EDA / Topic Name
           destination: modelforops
 #>>> EDA / Topic Name
@@ -47,7 +47,7 @@ logging:
 
 
 server:
-  port: 8085
+  port: 8082
 
 ---
 
@@ -74,7 +74,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-          group: customer
+          group: order
           destination: modelforops
           contentType: application/json
         event-out:

@@ -70,18 +70,6 @@
                     </v-list-item>
 
 
-                    <v-list-item
-                        class="px-2"
-                        key="notifies"
-                        to="/notifications/notifies"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        Notify
-                    </v-list-item>
-
-
 
                 </v-list>
             </v-navigation-drawer>
@@ -180,13 +168,6 @@ export default {
                 description: '', 
                 key: 'inventories', 
                 route: '/inventories/inventories',
-                ImageUrl: '',
-            },
-            { 
-                title: 'Notify', 
-                description: '', 
-                key: 'notifies', 
-                route: '/notifications/notifies',
                 ImageUrl: '',
             },
             

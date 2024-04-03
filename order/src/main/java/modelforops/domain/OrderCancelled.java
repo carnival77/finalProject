@@ -9,18 +9,22 @@ import modelforops.infra.AbstractEvent;
 //<<< DDD / Domain Event
 @Data
 @ToString
-public class OutOfStock extends AbstractEvent {
+public class OrderCancelled extends AbstractEvent {
 
     private Long id;
+    private String userId;
+    private String productId;
     private String productName;
-    private Integer stock;
-    private String orderId;
+    private Integer qty;
+    private Date orderDt;
+    private String address;
+    private String status;
 
-    public OutOfStock(Inventory aggregate) {
+    public OrderCancelled(Order aggregate) {
         super(aggregate);
     }
 
-    public OutOfStock() {
+    public OrderCancelled() {
         super();
     }
 }

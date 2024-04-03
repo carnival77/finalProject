@@ -14,9 +14,6 @@ import DeliveryDeliveryDetail from "./components/listers/DeliveryDeliveryDetail"
 import InventoryInventoryManager from "./components/listers/InventoryInventoryCards"
 import InventoryInventoryDetail from "./components/listers/InventoryInventoryDetail"
 
-import NotificationNotifyManager from "./components/listers/NotificationNotifyCards"
-import NotificationNotifyDetail from "./components/listers/NotificationNotifyDetail"
-
 
 
 export default new Router({
@@ -54,17 +51,6 @@ export default new Router({
                 path: '/inventories/inventories/:id',
                 name: 'InventoryInventoryDetail',
                 component: InventoryInventoryDetail
-            },
-
-            {
-                path: '/notifications/notifies',
-                name: 'NotificationNotifyManager',
-                component: NotificationNotifyManager
-            },
-            {
-                path: '/notifications/notifies/:id',
-                name: 'NotificationNotifyDetail',
-                component: NotificationNotifyDetail
             },
 
 

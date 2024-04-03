@@ -55,6 +55,8 @@ public class Inventory {
         stockDecreased.publishAfterCommit();
         StockDecreased stockDecreased = new StockDecreased(inventory);
         stockDecreased.publishAfterCommit();
+        OutOfStock outOfStock = new OutOfStock(inventory);
+        outOfStock.publishAfterCommit();
         */
 
         // Example 2:  finding and process

@@ -9,7 +9,7 @@ spring:
     gateway:
 #<<< API Gateway / Routes
       routes:
-        - id: oder
+        - id: order
           uri: http://localhost:8082
           predicates:
             - Path=/orders/**, 
@@ -21,12 +21,8 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/inventories/**, 
-        - id: notification
-          uri: http://localhost:8085
-          predicates:
-            - Path=/notifies/**, 
         - id: customer
-          uri: http://localhost:8086
+          uri: http://localhost:8085
           predicates:
             - Path=, 
         - id: frontend
@@ -53,8 +49,8 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: oder
-          uri: http://oder:8080
+        - id: order
+          uri: http://order:8080
           predicates:
             - Path=/orders/**, 
         - id: delivery
@@ -65,10 +61,6 @@ spring:
           uri: http://inventory:8080
           predicates:
             - Path=/inventories/**, 
-        - id: notification
-          uri: http://notification:8080
-          predicates:
-            - Path=/notifies/**, 
         - id: customer
           uri: http://customer:8080
           predicates:

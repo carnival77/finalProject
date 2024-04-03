@@ -23,7 +23,6 @@ See the README.md files inside the each microservices directory:
 - order
 - delivery
 - inventory
-- notification
 - customer
 
 
@@ -45,10 +44,6 @@ mvn spring-boot:run
 - inventory
 ```
  http :8088/inventories id="id" productName="productName" stock="stock" 
-```
-- notification
-```
- http :8088/notifies id="id" userId="userId" message="message" 
 ```
 - customer
 ```
