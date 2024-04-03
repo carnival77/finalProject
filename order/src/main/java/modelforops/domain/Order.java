@@ -62,16 +62,14 @@ public class Order {
 
         */
 
-        /** Example 2:  finding and process
+        //  Example 2:  finding and process
         
-        repository().findById(deliveryStarted.get???()).ifPresent(order->{
+        repository().findById(Long.valueOf(deliveryStarted.getOrderId())).ifPresent(order ->{
             
-            order // do something
+            order.setStatus("DeliveryStarted");
             repository().save(order);
-
-
-         });
-        */
+        });
+        
 
     }
 
@@ -86,16 +84,14 @@ public class Order {
 
         */
 
-        /** Example 2:  finding and process
+        //  Example 2:  finding and process
         
-        repository().findById(deliveryCancelled.get???()).ifPresent(order->{
+        repository().findById(Long.valueOf(deliveryCancelled.getOrderId())).ifPresent(order ->{
             
-            order // do something
+            order.setStatus("DeliveryCancelled");
             repository().save(order);
-
-
-         });
-        */
+        });
+        
 
     }
 
@@ -110,16 +106,14 @@ public class Order {
 
         */
 
-        /** Example 2:  finding and process
+        //  Example 2:  finding and process
         
-        repository().findById(outOfStock.get???()).ifPresent(order->{
+        repository().findById(Long.valueOf(outOfStock.getOrderId())).ifPresent(order ->{
             
-            order // do something
+            order.setStatus("OrderCancelled");
             repository().save(order);
-
-
-         });
-        */
+        });
+        
 
     }
     //>>> Clean Arch / Port Method

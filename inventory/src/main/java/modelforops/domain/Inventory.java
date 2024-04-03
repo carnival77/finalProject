@@ -63,7 +63,7 @@ public class Inventory {
         
         repository().findById(Long.valueOf(deliveryStarted.getProductId())).ifPresent(inventory->{
             
-            if(inventory.getStock() >= orderPlaced.getQty()){
+            if(inventory.getStock() >= deliveryStarted.getQty()){
                 inventory.setStock(inventory.getStock() - deliveryStarted.getQty()); 
                 repository().save(inventory);
 
@@ -72,8 +72,9 @@ public class Inventory {
 
             }else{
                 OutOfStock outOfStock = new OutOfStock(inventory);
-                outOfStock.setOrderId(deliveryStarted.getId()); 
+                outOfStock.setOrderId(Long.valueOf(deliveryStarted.getId())); 
                 outOfStock.publishAfterCommit();
+            }
 
          });
         
