@@ -33,6 +33,8 @@ public class Delivery {
 
     private Date delieveryDt;
 
+    private String address;
+
     @PostUpdate
     public void onPostUpdate() {
         // DeliveryStarted deliveryStarted = new DeliveryStarted(this);

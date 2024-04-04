@@ -74,6 +74,7 @@
                     { text: "qty", value: "qty" },
                     { text: "status", value: "status" },
                     { text: "delieveryDt", value: "delieveryDt" },
+                    { text: "address", value: "address" },
                 ],
             delivery : [],
             newValue: {},
@@ -98,6 +99,7 @@
                 'qty': 0,
                 'status': '',
                 'delieveryDt': '2024-04-04',
+                'address': '',
             }
         },
         methods: {

@@ -116,6 +116,7 @@
                 'qty': 0,
                 'status': '',
                 'delieveryDt': '2024-04-04',
+                'address': '',
             }
         },
         methods:{
