@@ -14,6 +14,12 @@ import DeliveryDeliveryDetail from "./components/listers/DeliveryDeliveryDetail"
 import InventoryInventoryManager from "./components/listers/InventoryInventoryCards"
 import InventoryInventoryDetail from "./components/listers/InventoryInventoryDetail"
 
+import ReviewReviewManager from "./components/listers/ReviewReviewCards"
+import ReviewReviewDetail from "./components/listers/ReviewReviewDetail"
+
+
+import PointPointManager from "./components/listers/PointPointCards"
+import PointPointDetail from "./components/listers/PointPointDetail"
 
 
 export default new Router({
@@ -53,6 +59,28 @@ export default new Router({
                 component: InventoryInventoryDetail
             },
 
+            {
+                path: '/reviews/reviews',
+                name: 'ReviewReviewManager',
+                component: ReviewReviewManager
+            },
+            {
+                path: '/reviews/reviews/:id',
+                name: 'ReviewReviewDetail',
+                component: ReviewReviewDetail
+            },
+
+
+            {
+                path: '/points/points',
+                name: 'PointPointManager',
+                component: PointPointManager
+            },
+            {
+                path: '/points/points/:id',
+                name: 'PointPointDetail',
+                component: PointPointDetail
+            },
 
 
 

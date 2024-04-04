@@ -25,6 +25,8 @@
                 { text: "productId", value: "productId" },
                 { text: "deliveryStatus", value: "deliveryStatus" },
                 { text: "orderStatus", value: "orderStatus" },
+                { text: "review", value: "review" },
+                { text: "point", value: "point" },
             ],
             myPage : [],
         }),

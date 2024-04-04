@@ -70,6 +70,30 @@
                     </v-list-item>
 
 
+                    <v-list-item
+                        class="px-2"
+                        key="reviews"
+                        to="/reviews/reviews"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Review
+                    </v-list-item>
+
+
+
+                    <v-list-item
+                        class="px-2"
+                        key="points"
+                        to="/points/points"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Point
+                    </v-list-item>
+
 
                 </v-list>
             </v-navigation-drawer>
@@ -168,6 +192,20 @@ export default {
                 description: '', 
                 key: 'inventories', 
                 route: '/inventories/inventories',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Review', 
+                description: '', 
+                key: 'reviews', 
+                route: '/reviews/reviews',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Point', 
+                description: '', 
+                key: 'points', 
+                route: '/points/points',
                 ImageUrl: '',
             },
             

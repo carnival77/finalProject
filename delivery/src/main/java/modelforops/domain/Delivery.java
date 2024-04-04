@@ -54,16 +54,21 @@ public class Delivery {
         //implement business logic here:
 
         //  Example 1:  new item 
-        // Delivery delivery = new Delivery();
-        // repository().save(delivery);
+        Delivery delivery = new Delivery();
+        delivery.setQty(orderPlaced.getQty());
+        delivery.setProductId(orderPlaced.getProductId());
+        delivery.setProductName(orderPlaced.getProductName());
+        delivery.setOrderId(orderPlaced.getId());
+        delivery.setStatus("Delivery Started");
+        repository().save(delivery);
 
-        // DeliveryStarted deliveryStarted = new DeliveryStarted(delivery);
-        // deliveryStarted.publishAfterCommit();
+        DeliveryStarted deliveryStarted = new DeliveryStarted(delivery);
+        deliveryStarted.publishAfterCommit();
         
 
         // Example 2:  finding and process
         
-        repository().findById(Long.valueOf(orderPlaced.getId())).ifPresent(delivery->{
+        // repository().findById(Long.valueOf(orderPlaced.getId())).ifPresent(delivery->{
             
             // inventory.setStock(inventory.getStock() - orderPlaced.getQty()); // do something
             // repository().save(delivery);
@@ -73,15 +78,16 @@ public class Delivery {
             // deliveryStarted.setQty(orderPlaced.getQty());
             // deliveryStarted.publishAfterCommit();
 
-            Delivery delivery = new Delivery();
-            delivery.setQty(orderPlaced.getQty());
-            delivery.setProductId(orderPlaced.getProductId());
-            repository().save(delivery);
+            // Delivery delivery = new Delivery();
+            // delivery.setQty(orderPlaced.getQty());
+            // delivery.setProductId(orderPlaced.getProductId());
+            // delivery.setOrderId(orderPlaced.getId());
+            // repository().save(delivery);
 
-            DeliveryStarted deliveryStarted = new DeliveryStarted(delivery);
-            deliveryStarted.publishAfterCommit();
+            // DeliveryStarted deliveryStarted = new DeliveryStarted(delivery);
+            // deliveryStarted.publishAfterCommit();
 
-         });
+        //  });
         
 
     }

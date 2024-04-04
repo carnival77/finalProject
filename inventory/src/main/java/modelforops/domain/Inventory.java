@@ -61,7 +61,7 @@ public class Inventory {
 
         // Example 2:  finding and process
         
-        repository().findById(Long.valueOf(deliveryStarted.getProductId())).ifPresent(inventory->{
+        repository().findByProductId(Long.valueOf(deliveryStarted.getProductId())).ifPresent(inventory->{
             
             if(inventory.getStock() >= deliveryStarted.getQty()){
                 inventory.setStock(inventory.getStock() - deliveryStarted.getQty()); 

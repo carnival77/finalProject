@@ -18,6 +18,12 @@
             <div>
                 <String label="OrderStatus" v-model="item.orderStatus" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <String label="Review" v-model="item.review" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Number label="Point" v-model="item.point" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
     </v-card>
 

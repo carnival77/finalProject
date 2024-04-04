@@ -32,7 +32,9 @@ jobs:
           mvn clean package -f ./order/pom.xml
           mvn clean package -f ./delivery/pom.xml
           mvn clean package -f ./inventory/pom.xml
+          mvn clean package -f ./review/pom.xml
           mvn clean package -f ./customer/pom.xml
+          mvn clean package -f ./point/pom.xml
 
       - name: Docker Build and push for Order
         uses: docker/build-push-action@v4
@@ -64,6 +66,16 @@ jobs:
             ghcr.io/${{ github.repository }}/inventory:latest
             ghcr.io/${{ github.repository }}/inventory:${{ github.ref_name }}
             
+      - name: Docker Build and push for Review
+        uses: docker/build-push-action@v4
+        with:
+          context: ./review
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/review:latest
+            ghcr.io/${{ github.repository }}/review:${{ github.ref_name }}
+            
       - name: Docker Build and push for Customer
         uses: docker/build-push-action@v4
         with:
@@ -73,4 +85,14 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/customer:latest
             ghcr.io/${{ github.repository }}/customer:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Point
+        uses: docker/build-push-action@v4
+        with:
+          context: ./point
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/point:latest
+            ghcr.io/${{ github.repository }}/point:${{ github.ref_name }}
             
