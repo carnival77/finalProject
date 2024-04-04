@@ -62,6 +62,7 @@ public class Delivery {
         delivery.setProductName(orderPlaced.getProductName());
         delivery.setOrderId(orderPlaced.getId());
         delivery.setUserId(orderPlaced.getUserId());
+        delivery.setAddress(orderPlaced.getAddress());
         delivery.setStatus("Delivery Started");
         repository().save(delivery);
 
