@@ -26,14 +26,14 @@ public class Inventory {
 
     @PostUpdate
     public void onPostUpdate() {
-        StockDecreased stockDecreased = new StockDecreased(this);
-        stockDecreased.publishAfterCommit();
+        // StockDecreased stockDecreased = new StockDecreased(this);
+        // stockDecreased.publishAfterCommit();
 
-        StockIncreased stockIncreased = new StockIncreased(this);
-        stockIncreased.publishAfterCommit();
+        // StockIncreased stockIncreased = new StockIncreased(this);
+        // stockIncreased.publishAfterCommit();
 
-        OutOfStock outOfStock = new OutOfStock(this);
-        outOfStock.publishAfterCommit();
+        // OutOfStock outOfStock = new OutOfStock(this);
+        // outOfStock.publishAfterCommit();
     }
 
     public static InventoryRepository repository() {
@@ -61,7 +61,7 @@ public class Inventory {
 
         // Example 2:  finding and process
         
-        repository().findByProductId(Long.valueOf(deliveryStarted.getProductId())).ifPresent(inventory->{
+        repository().findById(Long.valueOf(deliveryStarted.getProductId())).ifPresent(inventory->{
             
             if(inventory.getStock() >= deliveryStarted.getQty()){
                 inventory.setStock(inventory.getStock() - deliveryStarted.getQty()); 
@@ -72,7 +72,7 @@ public class Inventory {
 
             }else{
                 OutOfStock outOfStock = new OutOfStock(inventory);
-                outOfStock.setOrderId(Long.valueOf(deliveryStarted.getId())); 
+                outOfStock.setOrderId(Long.valueOf(deliveryStarted.getOrderId())); 
                 outOfStock.publishAfterCommit();
             }
 

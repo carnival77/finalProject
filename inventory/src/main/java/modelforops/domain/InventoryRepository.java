@@ -11,5 +11,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 )
 public interface InventoryRepository
     extends PagingAndSortingRepository<Inventory, Long> {
-        java.util.Optional<Inventory> findByProductId(Long id);
+        // java.util.Optional<Inventory> findByProductId(Long id);
     }

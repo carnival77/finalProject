@@ -35,11 +35,11 @@ public class Delivery {
 
     @PostUpdate
     public void onPostUpdate() {
-        DeliveryStarted deliveryStarted = new DeliveryStarted(this);
-        deliveryStarted.publishAfterCommit();
+        // DeliveryStarted deliveryStarted = new DeliveryStarted(this);
+        // deliveryStarted.publishAfterCommit();
 
-        DeliveryCancelled deliveryCancelled = new DeliveryCancelled(this);
-        deliveryCancelled.publishAfterCommit();
+        // DeliveryCancelled deliveryCancelled = new DeliveryCancelled(this);
+        // deliveryCancelled.publishAfterCommit();
     }
 
     public static DeliveryRepository repository() {
