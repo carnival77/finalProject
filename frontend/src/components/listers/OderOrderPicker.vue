@@ -52,7 +52,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'OderOrderPicker',
+        name: 'OrderOrderPicker',
         props: {
             value: [String, Object, Array, Number, Boolean],
         },

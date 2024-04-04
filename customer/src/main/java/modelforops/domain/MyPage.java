@@ -19,4 +19,6 @@ public class MyPage {
     private String productId;
     private String deliveryStatus;
     private String orderStatus;
+    private String review;
+    private Integer point;
 }

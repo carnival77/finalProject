@@ -27,7 +27,7 @@
                         hide-overlay
                         transition="dialog-bottom-transition"
                 >
-                    <OderOrder :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
+                    <OrderOrder :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
                             @add="append" v-if="tick"/>
 
                     <v-btn
@@ -74,7 +74,7 @@
             </div>
         </v-col>
         <v-row>
-            <OderOrder :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
+            <OrderOrder :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
         </v-row>
     </div>
 </template>
@@ -82,12 +82,12 @@
 <script>
 
     const axios = require('axios').default;
-    import OderOrder from './../OderOrder.vue';
+    import OrderOrder from './../OrderOrder.vue';
 
     export default {
-        name: 'OderOrderManager',
+        name: 'OrderOrderManager',
         components: {
-            OderOrder,
+            OrderOrder,
         },
         props: {
             offline: Boolean

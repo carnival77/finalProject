@@ -132,7 +132,7 @@
                 'productName': '',
                 'qty': 0,
                 'status': '',
-                'delieveryDt': '2024-04-03',
+                'delieveryDt': '2024-04-04',
             }
         },
         methods: {
