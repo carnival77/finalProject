@@ -16,9 +16,13 @@ spec:
     spec:
       containers:
         - name: order
-          image: stam0325/order:20240404
+          image: stam0325/order:v20240405_v2
           ports:
             - containerPort: 8080
+          # HPA(오토 스케일링 아웃) : CPU 요청에 대한 값을 지정
+          resources:
+            requests:
+              cpu: "200m"            
           readinessProbe:
             httpGet:
               path: '/actuator/health'
@@ -35,3 +39,21 @@ spec:
             timeoutSeconds: 2
             periodSeconds: 5
             failureThreshold: 5
+          env:
+            - name: ORDER_LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                   name: config-dev
+                   key: ORDER_LOG_LEVEL
+        # ConfigMap 설정
+        - name: cm-file
+          image: stam0325/order:v20240405_v2
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8080
+          env:
+          - name: CLASS
+            valueFrom:
+              configMapKeyRef:
+                name: my-config
+                key: class

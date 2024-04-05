@@ -44,6 +44,7 @@ logging:
   level:
     org.hibernate.type: trace
     org.springframework.cloud: debug
+    root: ${ORDER_LOG_LEVEL:INFO}
 
 
 server:
